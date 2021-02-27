@@ -11,15 +11,14 @@ class Card:
 
 class Deck:
     def __init__(self):
-        self.deck = []
-        self.reset_deck()
-
-    def reset_deck(self):
         num_face_values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
         royal_face_values = ["J", "Q", "K", "A"]
         suits = ["Hearts", "Clubs", "Spades", "Diamonds"]
 
         self.deck = [Card(num, suit) for suit in suits for num in num_face_values] + [Card(num, suit) for suit in suits for num in royal_face_values]
+
+    def reset_deck(self):
+        self.__init__()
 
     def get_card(self):
         card_index = randint(0, len(self.deck)-1)
@@ -31,20 +30,23 @@ class Deck:
             card.print()
 
 class Hand:
-    def __init__(self, hand_size):
-        self.hand = []
-        self.hand_size = hand_size
+    def __init__(self, initial_hand):
+        self.hand = initial_hand
+        self.hand_size = len(self.hand)
+        self.replaced_cards = set()
 
-    def withdraw_card(self, index=0):
-        self.hand.pop(index)
-
-        return self
-
-    def add_card(self, card):
-        if len(self.hand) < self.hand_size:
-            self.hand.append(card)
+    def replace_card(self, index, card):
+        if index not in self.replaced_cards:
+            self.replaced_cards.add(index)
+            self.hand[index] = card
 
         return self
+
+    def reset_hand(self, new_hand):
+        self.__init__(new_hand)
+
+    def get_replaced_cards():
+        return list(self.replaced_cards)
 
     def print(self):
         for card in self.hand:
