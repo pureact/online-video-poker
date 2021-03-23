@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "tsnd": "ts-node-dev --respawn --transpile-only server/VideoPoker.ts"
+    "tsnd": "ts-node-dev --respawn --transpile-only VideoPoker.ts"
   },
   "repository": {
     "type": "git",
