@@ -41,6 +41,7 @@ class VideoPoker {
             }
         }
 
+
         return deck
     }
 
@@ -82,9 +83,9 @@ class VideoPoker {
         console.log(hand.suits);
         console.log(hand.face_values);
         console.log(parseInt("5"));
-        
-        for(let i = 0; i < hand.face_values.length-1; i++){
-            if(1 + parseInt(hand.face_values[i]) != parseInt(hand.face_values[i+1])){
+
+        for (let i = 0; i < hand.face_values.length - 1; i++) {
+            if (1 + parseInt(hand.face_values[i]) != parseInt(hand.face_values[i + 1])) {
                 return ""
             }
         }
@@ -95,8 +96,8 @@ class VideoPoker {
         let hand = this.get_hand();
         let count = 1;
         hand.face_values.sort();
-        for(let i = 0; i < hand.face_values.length-1; i++){
-            if(hand.face_values[i] == hand.face_values[i+1]){
+        for (let i = 0; i < hand.face_values.length - 1; i++) {
+            if (hand.face_values[i] == hand.face_values[i + 1]) {
                 count++;
             }
         }
@@ -120,8 +121,8 @@ class VideoPoker {
     is_straight(): string {
         let hand = this.get_hand();
         hand.face_values.sort();
-        for(let i = 0; i < hand.face_values.length-1; i++){
-            if(1 + parseInt(hand.face_values[i]) != parseInt(hand.face_values[i+1])){
+        for (let i = 0; i < hand.face_values.length - 1; i++) {
+            if (1 + parseInt(hand.face_values[i]) != parseInt(hand.face_values[i + 1])) {
                 return ""
             }
         }
@@ -130,15 +131,16 @@ class VideoPoker {
 
     is_three_of_a_kind(): string {
         let hand = this.get_hand();
+        let face_counts: any = {}
         hand.face_values.sort();
-        /*(let count = 1;
-        for(let i = 0; i < hand.face_values.length; i++){
-            if(hand.face_values[i] == hand.face_values[i+1]){
-                count++;
+        for (let face_value of hand.face_values) {
+            if (face_value in face_counts) {
+                face_counts[face_value] += 1
+            } else {
+                face_counts[face_value] = 1
             }
         }
-        //5, 5, 5, 6, 7*/
-        return "Three of a Kind";
+        return Object.values(face_counts).sort().slice(-1)[0] == 3 ? "Three of a Kind" : ""
     }
     //[ '10', '10', '3', '3', '7' ]
     is_two_pair(): string {
@@ -149,8 +151,8 @@ class VideoPoker {
 
     is_jacks_or_better(): string {
         let hand = this.get_hand();
-        for(let i = 0; i < hand.face_values.length; i++){
-            if(parseInt(hand.face_values[i]) > 10){
+        for (let i = 0; i < hand.face_values.length; i++) {
+            if (parseInt(hand.face_values[i]) > 10) {
                 return "Jacks or Better";
             }
         }
@@ -158,9 +160,9 @@ class VideoPoker {
     }
 
     check_hand(): string {
-        let is_hands: Function[] = [this.is_royal_flush.bind(this), this.is_straight_flush.bind(this), this.is_four_of_a_kind.bind(this), 
-            this.is_full_house.bind(this), this.is_flush.bind(this), this.is_straight.bind(this), this.is_three_of_a_kind.bind(this), 
-            this.is_two_pair.bind(this), this.is_jacks_or_better.bind(this)]
+        let is_hands: Function[] = [this.is_royal_flush.bind(this), this.is_straight_flush.bind(this), this.is_four_of_a_kind.bind(this),
+        this.is_full_house.bind(this), this.is_flush.bind(this), this.is_straight.bind(this), this.is_three_of_a_kind.bind(this),
+        this.is_two_pair.bind(this), this.is_jacks_or_better.bind(this)]
 
         for (let is_hand of is_hands) {
             let hand_type = is_hand();
@@ -193,4 +195,4 @@ class VideoPoker {
 }
 
 let vp = new VideoPoker(500);
-console.log(vp.play([0,1,2,3,4]));
+console.log(vp.play([0, 1, 2, 3, 4]));
