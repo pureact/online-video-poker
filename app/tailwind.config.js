@@ -41,6 +41,23 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+
+      vp: {
+        blue: '#4678C5',
+        'dark-blue': '#3F6DB2',
+        'yellow': {
+          100: "#fff4cc",
+          200: "#ffe999",
+          300: "#ffdd66",
+          400: "#ffd233",
+          500: "#ffc700",
+          600: "#cc9f00",
+          700: "#997700",
+          800: "#665000",
+          900: "#332800"
+        },
+        red: '#D04C4C',
+      },
     },
     spacing: {
       px: '1px',
@@ -179,6 +196,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Inter',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
@@ -194,7 +212,7 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: ['DM Serif Display', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
         'ui-monospace',
         'SFMono-Regular',
@@ -756,7 +774,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus', 'active'],
     backgroundImage: ['responsive'],
     backgroundOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
