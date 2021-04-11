@@ -21,5 +21,8 @@
       .text-shadow-none {
         text-shadow: none;
       }
+      .stroke-yellow {
+        text-shadow: -1px -1px 0 #ffc700, 1px -1px 0 #ffc700, -1px 1px 0 #ffc700, 1px 1px 0 #ffc700;
+      }
   } 
 }
