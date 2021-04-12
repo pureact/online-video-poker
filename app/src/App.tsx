@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './components/Button'
 import Table from './components/Table'
+import Card from './components/Card';
 
 function App() {
   return (
@@ -18,7 +19,13 @@ function App() {
             </span>
           </div>
 
-          <span className="text-white">Center</span>
+          <span className="flex flex-row text-black">
+            <Card rank={"10"} suit={"S"}/>
+            <Card rank={"11"} suit={"H"}/>
+            <Card rank={"12"} suit={"D"}/>
+            <Card rank={"13"} suit={"C"}/>
+            <Card rank={"14"} suit={"S"}/>
+          </span>
 
           <div className="flex flex-row w-full justify-between text-4xl font-bold text-vp-red py-4">
             <span className="stroke-yellow">BET 5</span>

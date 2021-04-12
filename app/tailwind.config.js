@@ -57,6 +57,7 @@ module.exports = {
           900: "#332800"
         },
         red: '#D04C4C',
+        white: '#FAFAFA'
       },
     },
     spacing: {
