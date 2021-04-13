@@ -12,6 +12,7 @@ function App() {
   const [held, setHeld] = useState([false, false, false, false, false])
   const [drawing, setDrawing] = useState(true)
   const [title, setTitle] = useState('')
+  const [gained, setGained] = useState(0)
 
   function update_card(index: number) {
     let heldCopy = held
@@ -32,6 +33,7 @@ function App() {
     setDrawing(false)
     setHeld([false, false, false, false, false])
     setMoney(vp.get_money())
+    setGained(out.gained)
   }
 
   const renderCards = () => {
@@ -59,7 +61,7 @@ function App() {
 
           <div className="flex flex-row w-full justify-between text-4xl font-bold tracking-wider text-vp-red py-4 cursor-default">
             <span className="stroke-yellow">BET {bet}</span>
-            <span className="stroke-yellow">CREDITS {money}</span>
+            <span className="stroke-yellow">CREDITS {money} ({gained})</span>
           </div>
           
           <div className="self-end grid grid-cols-5 gap-2 w-full pb-4">
