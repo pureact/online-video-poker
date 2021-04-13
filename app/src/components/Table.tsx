@@ -41,13 +41,11 @@ function Table({ bet }: TableProps) {
   });
 
   return (
-    <div className="flex flex-row w-full justify-between bg-vp-yellow-500 rounded-lg px-4 py-2 shadow">
-      <div className="flex flex-col font-bold pl-1 py-1">
-        {labels.map((label) => {
-          return <span>{label}</span>
-        })}
+    <div className="flex flex-row w-full bg-vp-yellow-500 rounded-lg px-4 py-2 shadow cursor-default">
+      <div className="flex flex-col justify-between font-bold pl-1 py-1 pr-6">
+        {labels.map((label) => (<span>{label}</span>))}
       </div>
-      <div className="flex flex-row flex-grow bg-vp-blue rounded-lg ml-20">
+      <div className="flex flex-row flex-grow bg-vp-blue rounded-lg">
         {bet_table}
       </div>
     </div>

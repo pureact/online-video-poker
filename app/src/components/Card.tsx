@@ -7,16 +7,7 @@ type CardProps = {
 
 function Card({ rank, suit }: CardProps) {
   const [showHold, setShowHold] = useState(false);
-  const onClick = () => showHold ? setShowHold(false) : setShowHold(true)
-
-  //pain
-  let variable_classes = "";
-  if(rank === "10"){
-    variable_classes += " px-4"
-  }
-  else{
-    variable_classes += " px-6"
-  }
+  const onClick = () => setShowHold(!showHold);
 
   let suit_color = "";
   if(suit === "H" || suit === "D"){
@@ -52,29 +43,31 @@ function Card({ rank, suit }: CardProps) {
       break;
   }
 
-  const Hold = () => (
-    <div className="flex flex-col items-center text-4xl font-bold text-vp-red stroke-yellow">
-      HOLD
-    </div>
-  );
+  const Hold = () => {
+    let classes = "flex flex-col items-center text-4xl font-bold text-vp-red stroke-yellow pb-3"
+    classes += showHold ? "" : " invisible"
+    
+    return (
+      <div className={classes}>
+        HOLD
+      </div>
+    )}
 
   return (
-    <div>
-
-      { showHold ? <Hold/> : <div className="m-10"></div>}
-
-      <button className="flex flex-col w-40 h-56 rounded-lg bg-vp-white mx-3" onClick={onClick}>
-        <div className={"flex h-1/4 items-end text-4xl font-bold" + variable_classes + suit_color}>
-          {rank}
+    <div className="flex flex-col justify-center">
+      <Hold/>
+      <div className={"grid grid-rows-2 rounded-lg bg-vp-white shadow p-4 transform-gpu duration-300 hover:-translate-y-2 hover:scale-105 active:-translate-y-1 active:scale-100 cursor-pointer" + suit_color} onClick={onClick}>
+        <div className="flex flex-row">
+          <div className="flex flex-col justify-center items-center text-4xl font-bold">
+            <span>{rank}</span>
+            <span className="text-5xl">{suit}</span>
+          </div>
+          <div className="flex-grow"/>
         </div>
-        <div className={"flex h-1/4 px-5 text-5xl" + suit_color}>
+        <div className="flex justify-center items-center text-8xl">
           {suit}
         </div>
-        <div className={"flex justify-center items-center h-1/2 text-9xl" + suit_color}>
-          {suit}
-        </div>
-        
-      </button>
+      </div>
     </div>
   )
 }
