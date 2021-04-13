@@ -3,11 +3,15 @@ import React, {useState} from 'react'
 type CardProps = {
   rank: string,
   suit: string,
+  onClick: Function,
 }
 
-function Card({ rank, suit }: CardProps) {
+function Card({ rank, suit, onClick }: CardProps) {
   const [showHold, setShowHold] = useState(false);
-  const onClick = () => setShowHold(!showHold);
+  const onClickInternal = () => {
+    setShowHold(!showHold);
+    onClick();
+  };
 
   let suit_color = "";
   if(suit === "H" || suit === "D"){
@@ -56,7 +60,7 @@ function Card({ rank, suit }: CardProps) {
   return (
     <div className="flex flex-col justify-center">
       <Hold/>
-      <div className={"grid grid-rows-2 rounded-lg bg-vp-white shadow p-4 transform-gpu duration-300 hover:-translate-y-2 hover:scale-105 active:-translate-y-1 active:scale-100 cursor-pointer" + suit_color} onClick={onClick}>
+      <div className={"grid grid-rows-2 rounded-lg bg-vp-white shadow p-4 transform-gpu duration-300 hover:-translate-y-2 hover:scale-105 active:-translate-y-1 active:scale-100 cursor-pointer" + suit_color} onClick={onClickInternal}>
         <div className="flex flex-row">
           <div className="flex flex-col justify-center items-center text-4xl font-bold">
             <span>{rank}</span>
