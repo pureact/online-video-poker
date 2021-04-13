@@ -1,18 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 type CardProps = {
   rank: string,
   suit: string,
+  held: boolean,
   onClick: Function,
 }
 
-function Card({ rank, suit, onClick }: CardProps) {
-  const [showHold, setShowHold] = useState(false);
-  const onClickInternal = () => {
-    setShowHold(!showHold);
-    onClick();
-  };
-
+function Card({ rank, suit, held, onClick }: CardProps) {
   let suit_color = "";
   if(suit === "H" || suit === "D"){
     suit_color = " text-red-600";
@@ -49,7 +44,7 @@ function Card({ rank, suit, onClick }: CardProps) {
 
   const Hold = () => {
     let classes = "flex flex-col items-center text-4xl font-bold text-vp-red stroke-yellow pb-3"
-    classes += showHold ? "" : " invisible"
+    classes += held ? "" : " invisible"
     
     return (
       <div className={classes}>
@@ -60,7 +55,7 @@ function Card({ rank, suit, onClick }: CardProps) {
   return (
     <div className="flex flex-col justify-center">
       <Hold/>
-      <div className={"grid grid-rows-2 rounded-lg bg-vp-white shadow p-4 transform-gpu duration-300 hover:-translate-y-2 hover:scale-105 active:-translate-y-1 active:scale-100 cursor-pointer" + suit_color} onClick={onClickInternal}>
+      <div className={"grid grid-rows-2 rounded-lg bg-vp-white shadow p-4 transform-gpu duration-300 hover:-translate-y-2 hover:scale-105 active:-translate-y-1 active:scale-100 cursor-pointer" + suit_color} onClick={() => onClick()}>
         <div className="flex flex-row">
           <div className="flex flex-col justify-center items-center text-4xl font-bold">
             <span>{rank}</span>

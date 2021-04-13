@@ -1,7 +1,7 @@
 type suit = "H" | "D" | "C" | "S"
 type face_value = "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14"
 
-interface Card {
+export interface Card {
     face_value: face_value;
     suit: suit;
 }
@@ -13,7 +13,6 @@ class VideoPoker {
     bet: number;
 
     constructor(money: number) {
-        console.log("RECONSTRUCTED")
         this.deck = this.generate_deck()
         this.hand = []
         this.money = money
@@ -64,6 +63,7 @@ class VideoPoker {
         for (let i = 0; i < 5; i++) {
             this.hand.push(this.get_card())
         }
+        return this.hand
     }
 
     get_card(): Card {
@@ -206,14 +206,14 @@ class VideoPoker {
         return ""
     }
 
-    manage_bet(hand_type: string) {
+    manage_bet(hand_type: string, hand: Card[]) {
         const labels = ["ROYAL FLUSH", "STRAIGHT FLUSH", "FOUR OF A KIND", "FULL HOUSE", "FLUSH", "STRAIGHT", "THREE OF A KIND", "TWO PAIR", "JACKS OR BETTER"]
         const ratios = [250, 50, 25, 9, 6, 4, 3, 2, 1]
         if (this.bet === 5) ratios[0] = 800
-        console.log(hand_type)
         let gained = hand_type ? ratios[labels.indexOf(hand_type)]*this.bet : -1*this.bet
+        this.money += gained
         
-        return { gained, hand_type }
+        return { gained, hand_type, hand }
     }
 
     set_bet(bet: number) {
@@ -257,7 +257,7 @@ class VideoPoker {
 
         // calculate winnings
 
-        return this.manage_bet(hand_type)
+        return this.manage_bet(hand_type, this.hand)
     }
 }
 
