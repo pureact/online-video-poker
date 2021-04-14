@@ -1,4 +1,4 @@
-# online video poker
+# online video poker :r🚀cket:
 
 An online video poker web app built using React, TypeScript.
 
