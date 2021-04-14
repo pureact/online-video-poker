@@ -22,7 +22,11 @@ The game checks to see if the hand is any of the below from top to bottom
 
 - Sort the hand's face values array
 - Make a set of the hands suits
-- Check if the hands face value
+- Check if the hand's face values are a royal straight (10, J, Q, K, A)
+- Check if the set only has one suit
+- If both of those cases are true then the hand is a royal flush
+
+
 
 ## Contributors
 
