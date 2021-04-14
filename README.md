@@ -16,17 +16,26 @@ TBD
 
 ## Game Logic 🎴
 
-The game checks to see if the hand is any of the below from top to bottom
+The game checks to see if the hand is any of the below from top to bottom.
+For example it checks to see if a hand is a royal flush before it does a straight flush
 
 ### Royal Flush
 
-- Sort the hand's face values array
+- Sort the hand's face values array (low to high)
 - Make a set of the hands suits
 - Check if the hand's face values are a royal straight (10, J, Q, K, A)
 - Check if the set only has one suit
 - If both of those cases are true then the hand is a royal flush
 
+### Straight Flush
 
+- Sort the hand's face values array (low to high)
+- Make a set of the hands suits
+- Check that the sorted face values increase by 1 each time (2,3,4,5,6)
+- Check if the set only has one suit
+- If both of those cases are true then the hand is a straight flush
+
+### Four of a Kind
 
 ## Contributors
 
