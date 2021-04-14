@@ -26,8 +26,8 @@ function App() {
   }
 
   const draw = () => {
-    console.log(held.flatMap((val, i) => val ? [i] : []))
-    let out = vp.play(held.flatMap((val, i) => val ? [i] : []))
+    const heldIndices = [...held.keys()].filter(i => held[i])
+    const out = vp.play(heldIndices)
     setTitle(out.hand_type)
     setHand([...out.hand])
     setDrawing(false)
@@ -37,7 +37,7 @@ function App() {
   }
 
   const renderCards = () => {
-    return hand.map((card, i) => (<Card rank={card.face_value} suit={card.suit} held={held[i]} onClick={() => update_card(i)}/>)).reverse()
+    return hand.map((card, i) => (<Card rank={card.face_value} suit={card.suit} held={held[i]} onClick={() => update_card(i)}/>))
   }
 
   return (

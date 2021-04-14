@@ -249,10 +249,10 @@ class VideoPoker {
         let card_indice: number[] = [0, 1, 2, 3, 4]
         card_indice = card_indice.filter(num => !(keep.includes(num)))
 
-        for (let index in card_indice) {
+        for (let index of card_indice) {
             this.hand[index] = this.get_card()
         }
-
+        
         let hand_type: string = this.check_hand()
 
         // calculate winnings
