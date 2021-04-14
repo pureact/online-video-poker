@@ -47,6 +47,12 @@ For example it checks to see if a hand is a royal flush before it does a straigh
 
 ### Flush
 
+- Create a set of the hand's suits
+- If there is only one item in the set then it's a flush
+
+### Straight
+
+
 ## Contributors
 
 - [naek2k](https://naek.ca)
