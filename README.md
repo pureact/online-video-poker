@@ -37,6 +37,12 @@ For example it checks to see if a hand is a royal flush before it does a straigh
 
 ### Four of a Kind
 
+- Create a map for the {face_value: # of times it appears in the hand}
+- If a card appears four times then it is a four of a kind
+
+### Full House
+
+
 ## Contributors
 
 - [naek2k](https://naek.ca)
