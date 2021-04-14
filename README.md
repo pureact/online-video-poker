@@ -62,6 +62,8 @@ For example it checks to see if a hand is a royal flush before it does a straigh
 
 ### Three of a Kind
 
+- Count the face values of each card in the hand
+- If there is 3 of a single face value, it is a three of a kind
 
 ### Two Pair
 
