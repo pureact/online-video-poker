@@ -14,6 +14,16 @@ Currently hosted at [somewebsite.com/poker](https://naek.ca)
 
 TBD
 
+## Game Logic 🎴
+
+The game checks to see if the hand is any of the below from top to bottom
+
+### Royal Flush
+
+- Sort the hand's face values array
+- Make a set of the hands suits
+- Check if the hands face value
+
 ## Contributors
 
 - [naek2k](https://naek.ca)
