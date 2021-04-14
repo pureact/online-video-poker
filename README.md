@@ -20,7 +20,7 @@ The game gives the user an initial hand. During this stage, they can choose to h
 
 The game checks to see if the hand is any of the below from top to bottom.
 
-i.e. it checks to see if a hand is a royal flush before it does a straight flush.
+- i.e. it checks to see if a hand is a royal flush before it does a straight flush.
 
 This part is important since a straight flush functions off the basis that it knows the hand is not a royal flush.
 
