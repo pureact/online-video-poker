@@ -52,6 +52,12 @@ For example it checks to see if a hand is a royal flush before it does a straigh
 
 ### Straight
 
+- Sort the hand's face values array (low to high)
+- Make a set of the hands suits
+- Check that the sorted face values increase by 1 each time (2,3,4,5,6)
+- If the above case is true then it's a straight
+
+### Three of a Kind
 
 ## Contributors
 
