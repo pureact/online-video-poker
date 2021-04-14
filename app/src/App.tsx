@@ -5,7 +5,7 @@ import Card from './components/Card';
 import VideoPoker from './VideoPoker';
 
 function App() {
-  const [vp] = useState(new VideoPoker(10))
+  const [vp] = useState(new VideoPoker(200))
   const [hand, setHand] = useState(vp.get_hand().hand)
   const [bet, setBet] = useState(vp.get_bet())
   const [money, setMoney] = useState(vp.get_money())
