@@ -1,6 +1,6 @@
 # online video poker
 
-An online video poker web app built using React, TypeScript, Flask, and Python.
+An online video poker web app built using React, TypeScript.
 
 ## Preview
 
