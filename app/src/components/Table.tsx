@@ -9,6 +9,7 @@ function Table({ bet }: TableProps) {
   const ratios = [250, 50, 25, 9, 6, 4, 3, 2, 1]
   const bets = [1,2,3,4,5]
   const bet_table: JSX.Element[] = []
+  let i = 0
 
   bets.forEach(bet_val => {
     const rows: JSX.Element[] = []
@@ -17,7 +18,7 @@ function Table({ bet }: TableProps) {
     ratios.forEach(ratio => {
       const value = bet_val === 5 && ratio === 250 ? 4000 : bet_val*ratio
       rows.push(
-        <span>
+        <span key={ratio + value}>
           {value}
         </span>
       )
@@ -32,9 +33,9 @@ function Table({ bet }: TableProps) {
         variable_classes += " rounded-r-lg"
         break
     }
-
+    
     bet_table.push(
-      <div className={`${main_classes} ${variable_classes}`}>
+      <div className={`${main_classes} ${variable_classes}`} key={`row${i++}`}>
         {rows}
       </div>
     ) 
@@ -43,7 +44,7 @@ function Table({ bet }: TableProps) {
   return (
     <div className="flex flex-row w-full bg-vp-yellow-500 rounded-lg px-4 py-2 shadow cursor-default">
       <div className="flex flex-col justify-between font-bold pl-1 py-1 pr-6">
-        {labels.map((label) => (<span>{label}</span>))}
+        {labels.map((label, i) => (<span key={`label${i}`}>{label}</span>))}
       </div>
       <div className="flex flex-row flex-grow bg-vp-blue rounded-lg">
         {bet_table}
