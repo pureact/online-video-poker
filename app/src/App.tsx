@@ -5,7 +5,7 @@ import Card from './components/Card';
 import VideoPoker from './VideoPoker';
 
 function App() {
-  const [vp] = useState(new VideoPoker(200))
+  const [vp] = useState(new VideoPoker(10))
   const [hand, setHand] = useState(vp.get_hand().hand)
   const [bet, setBet] = useState(vp.get_bet())
   const [money, setMoney] = useState(vp.get_money())
@@ -29,6 +29,10 @@ function App() {
   }
 
   const draw = () => {
+    if(vp.get_money() < vp.get_bet()) {
+      alert("You don't have enough money to make that bet.")
+      return
+    }
     const heldIndices = [...held.keys()].filter(i => held[i])
     const out = vp.play(heldIndices)
     setTitle(out.hand_type)
@@ -37,6 +41,10 @@ function App() {
     setHeld([false, false, false, false, false])
     setMoney(vp.get_money())
     setGained(out.gained)
+    if(vp.get_money() <= 0) {
+      alert("You ran out of credits. Here's another 200!")
+      setMoney(vp.set_money(200))
+    }
   }
 
   const renderCards = () => {
