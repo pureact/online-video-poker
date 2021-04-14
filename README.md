@@ -42,6 +42,10 @@ For example it checks to see if a hand is a royal flush before it does a straigh
 
 ### Full House
 
+- Create a set of the hands face values
+- If there are only two elements in the set then it's a full house
+
+### Flush
 
 ## Contributors
 
