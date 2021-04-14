@@ -59,6 +59,17 @@ For example it checks to see if a hand is a royal flush before it does a straigh
 
 ### Three of a Kind
 
+
+### Two Pair
+
+- Create a set of the hand's face values
+- If the set has three items then the hand has a two pair
+
+### Jacks or Better
+
+- Create a map for the {face_value: # of times it appears in the hand}
+- If the map has a face value that is 10, J, Q, K, A that appears twice, it is jacks or better
+
 ## Contributors
 
 - [naek2k](https://naek.ca)
