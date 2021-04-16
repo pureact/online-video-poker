@@ -1,6 +1,6 @@
-<h2 align="center">
+<h3 align="center">
   ♣️ ♥️ online video poker ♠️ ♦️
-</h2>
+</h3>
 
 <p align="center">
   An online video poker web app, built using React and TypeScript.
