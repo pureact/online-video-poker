@@ -34,7 +34,13 @@ As a player, you can:
 
 ## Game Logic 🎴
 
+### Overview
+
 The game gives the user an initial hand. During this stage, they can choose to hold cards or change their bet. Once satisfied, the user will press draw. The back end receives the cards they chose to hold. New cards drawn from the deck replace the ones they did not hold. These cards get passed to the back end to determine the hand type. The back end uses a sieve-like pattern to determine a winning hand. It matches the hands in descending order. The first hand it attempts to match is the royal flush. The final hand is the jacks pair or better. The user will then win or lose money depending on their hand type. If they have less than jacks or better, they lose their bet. The rules of video poker determine how much the user wins. They can press deal to reset their hand and play another game.
+
+### Card Selection
+
+Video Poker draws cards from a standard deck of 52 cards. It chooses cards to draw by generating a random index from {0...N-1}, N being the current length of the deck. The deck removes the card at the index and adds it to the player's hand. Choosing any card has a 1/N probability. When choosing cards to replace the unheld cards, it draws from the same deck. The app resets the deck once a round concludes.
 
 The game checks to see if the hand is any of the below from top to bottom.
 
