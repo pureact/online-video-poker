@@ -1,18 +1,36 @@
-# online video poker :r🚀cket:
+<h2 align="center">
+  ♣️ ♥️ online video poker ♠️ ♦️
+</h2>
 
-An online video poker web app built using React, TypeScript.
+<p align="center">
+  An online video poker web app, built using React and TypeScript.
+</p>
+
+---
 
 ## Preview
 
-TBD
+![preview gif](https://i.imgur.com/i7AZcqK.gif)
 
 ## Try It Out
 
-Currently hosted at [somewebsite.com/poker](https://naek.ca)
+Currently hosted at [naek.ca/projects/video-poker](https://naek.ca/projects/video-poker)
 
 ## Features
 
-TBD
+A web implementation of Jacks-or-Better Video Poker, hosted online and available on any browser.
+
+As a player, you can:
+
+- Read a beginner-friendly set of instructions, accessible through the **HELP** button
+- Visually see your current bet, total credits, and payout amounts according to the poker hand rankings table
+- Increase your bet by tapping the **BET ONE** button
+- Set your bet to the maximum amount of 5 by clicking the **BET MAX** button
+- Lower your bet through the **LOWER BET** button
+- Tap on a card to choose to *hold* that card
+- Click the **DRAW** button to play the round 🚀
+- Press the **DEAL** button to start a new game and get dealt new cards
+- Experience an simple-to-use modern interface for Video Poker
 
 ## Game Logic 🎴
 
@@ -78,8 +96,14 @@ This part is important since a straight flush functions off the basis that it kn
 - Create a map for the {face_value: # of times it appears in the hand}
 - If the map has a face value that is 10, J, Q, K, A that appears twice, it is jacks or better
 
+## Design
+
+The app designs were all done in [Figma](https://www.figma.com/file/diECkWun50GR0R6VSvh5Nu/Video-Poker).
+
+![figma preview](https://i.imgur.com/cGd3E6A.png)
+
 ## Contributors
 
-- [naek2k](https://naek.ca)
-- [vinhvn](https://vinhnguyen.ca)
-- [matthewoneill](https://matthewoneill.ca)
+- 👨‍🎤 [matthewoneill](https://matthewoneill.ca): Game Logic, Frontend, QA
+- 🧔 [naek2k](https://naek.ca): Backend, Frontend
+- 🐱 [vinhvn](https://vinhnguyen.ca): Frontend, Design
