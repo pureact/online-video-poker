@@ -123,6 +123,23 @@ This part is important since a straight flush functions off the basis that it kn
 - Create a map for the {face_value: # of times it appears in the hand}
 - If the map has a face value that is J, Q, K, A that appears twice, it is jacks or better
 
+## Hand Probabilities
+
+```json
+{
+  nothing: 79.3703,
+  'JACKS OR BETTER': 12.9713,
+  'TWO PAIR': 4.7669999999999995,
+  'THREE OF A KIND': 2.1538999999999997,
+  'STRAIGHT': 0.3519,
+  'FLUSH': 0.213,
+  'FULL HOUSE': 0.1463,
+  'FOUR OF A KIND': 0.025,
+  'STRAIGHT FLUSH': 0.0009,
+  'ROYAL FLUSH': 0.00039999999999999996
+}
+```
+
 ## Design
 
 The app designs were all done in [Figma](https://www.figma.com/file/diECkWun50GR0R6VSvh5Nu/Video-Poker).
