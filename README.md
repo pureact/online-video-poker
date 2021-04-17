@@ -32,6 +32,28 @@ As a player, you can:
 - Press the **DEAL** button to start a new game and get dealt new cards
 - Experience an simple-to-use modern interface for Video Poker
 
+## Usage
+
+First, you must have at least [nodejs and npm](https://nodejs.org/en/) installed.
+
+Then clone and navigate to this directory to run `yarn install` or `npm install` depending on your vendor of choice.
+
+To start the development server, use one of the following commands:
+
+```bash
+yarn start
+# or
+npm run start
+```
+
+To build for production, use one of the following commands:
+
+```bash
+yarn build
+# or
+npm run build
+```
+
 ## Game Logic 🎴
 
 ### Overview
@@ -47,7 +69,6 @@ The game checks to see if the hand is any of the below from top to bottom.
 - i.e. it checks to see if a hand is a royal flush before it does a straight flush.
 
 This part is important since a straight flush functions off the basis that it knows the hand is not a royal flush.
-
 
 ### Royal Flush
 
@@ -100,7 +121,7 @@ This part is important since a straight flush functions off the basis that it kn
 ### Jacks or Better
 
 - Create a map for the {face_value: # of times it appears in the hand}
-- If the map has a face value that is 10, J, Q, K, A that appears twice, it is jacks or better
+- If the map has a face value that is J, Q, K, A that appears twice, it is jacks or better
 
 ## Design
 
