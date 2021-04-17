@@ -127,7 +127,7 @@ This part is important since a straight flush functions off the basis that it kn
 
 ```json
 {
-  "nothing": 79.3703,
+  "NOTHING": 79.3703,
   "JACKS OR BETTER": 12.9713,
   "TWO PAIR": 4.7669999999999995,
   "THREE OF A KIND": 2.1538999999999997,
